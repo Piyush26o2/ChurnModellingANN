@@ -1,5 +1,6 @@
-torch
+streamlit==1.32.2
+altair==5.3.0
+torch==2.2.2
 scikit-learn
 pandas
 numpy
-streamlit
