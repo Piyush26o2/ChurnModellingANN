@@ -7,13 +7,13 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 import pickle 
 
 # Load trained models
-with open('models\ohe.pkl', 'rb') as file:
+with open('models/ohe.pkl', 'rb') as file:
     ohe_geo = pickle.load(file)
 
-with open('models\label_encoder_gender.pkl', 'rb') as file:
+with open('models/label_encoder_gender.pkl', 'rb') as file:
     le_gender = pickle.load(file)
 
-with open('models\scaler.pkl', 'rb') as file:
+with open('models/scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
 # Streamlit App
@@ -78,7 +78,7 @@ model = nn.Sequential(
     nn.Linear(32, 1) 
 )
 
-model.load_state_dict(torch.load(r"models\best_model.pt", map_location=device))
+model.load_state_dict(torch.load(r"models/best_model.pt", map_location=device))
 model.to(device)
 model.eval()
 
@@ -93,3 +93,4 @@ if prediction.item()==1 :
     print("The customer is likely to churn") 
 else : 
     print("The customer is not likely to churn")
+
